@@ -1,0 +1,640 @@
+
+.link_button{
+  width: 210px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #27baf1;
+  margin: auto 0 auto 0;
+  padding: 10px 0px;
+}
+.link_button_second{
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+  padding: 10px 35px;
+}
+.link_button span,.link_button_second span{
+  padding-left: 5px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ---------------------------- Whatsapp and Call Link -------------------------- */
+.gk_whatsapp_link{
+  position: fixed;
+  top: 32%;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+.gk_whatsapp_link .whatsapp_button{
+  border-radius: 0 15px 0 0;
+  color: #ffffff;
+  background-color: #23e93f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 10px;
+}
+/* .gk_whatsapp_link .whatsapp_button .icon_whatsapp{
+  color: #ffffff;
+} */
+.gk_whatsapp_link .whatsapp_button .text_whatsapp{
+  color: black;
+  text-orientation: mixed;
+  writing-mode: vertical-rl;
+}
+.gk_whatsapp_link .gk_phone_link{
+  color: #ffffff;
+  background-color: #1a2535;
+  border-radius: 0 0 15px 0;
+  padding: 15px 10px;
+}
+.gk_whatsapp_link .gk_phone_link .icon_phone{
+  width: 20.8px;
+  height: 20.8px;
+}
+/* ---------------------------- Home page main Banner -------------------------- */
+.mobile_banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mobile_banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobile_banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding:  0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(180deg,#06155361 0,#1c2f6e59 100%); /* Example overlay color with transparency */
+  color: white;
+}
+
+.mobile_banner .heading {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: -.02em;
+}
+
+.mobile_banner .description {
+  font-size: 1rem;
+  text-align: center;
+}
+/* banner down arrow */
+.Main_banner_container{
+  position: relative;
+}
+.clv_down-arrow {
+  position: absolute;
+  top: 80%;
+  left: calc(50% - 14px);
+  width: 0;
+  height: 30px;
+  border: 2px solid;
+  border-radius: 2px;
+  animation: jumpInfinite 1.5s infinite;
+  z-index: 2;
+}
+
+.clv_down-arrow:after {
+  content: " ";
+  position: absolute;
+  top: 14px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  border-radius: 4px;
+  transform: rotateZ(45deg);
+}
+
+@keyframes jumpInfinite {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 20px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+/* Card Service section */
+.indicators {
+  max-width: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.indicators .cs__dot{
+  border: 0;
+  width: 5px;
+  height: 5px;
+  background-color: #555;
+}
+.indicators .cs__dot.active {
+  background-color: #27baf1!important; /* Active indicator color */
+}
+
+.card__service{
+  margin-top: -50px;
+}
+ .card_sec_header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card_sec_header .heading{
+  color: white;
+  font-size: clamp(1rem, 1.1458rem + 0.4762vw, 1.5625rem);
+  font-weight: 600;
+}
+.service_container{
+  display: flex;
+  justify-content: center;
+}
+.card__service .card{
+  border: 1px solid black;
+  transition: all .5s;
+}
+.card_box {
+  transition: all 1s ease-in-out;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  row-gap: 35px;
+}
+.animated_card{
+  width: 31%;
+  background-color: white;
+  transition: all .5s;
+}
+.animated_card:hover {
+  transform: translateY(-9px);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.animated_card::before {
+  content: '';
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: -1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.animated_card:hover::before {
+  content: '';
+  bottom: -10px;
+  left: -10px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  background-color: #fff;
+  pointer-events: none;
+  z-index: -1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.animated_card .card{
+  border: 1px solid black;
+}
+.animated_card .card_img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.animated_card .card_title {
+  background-color: white;
+  border-top: 1px solid black;
+  
+}
+.animated_card .card_title h1{
+  height: 54px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.animated_card .card_title p{
+  height: 250px;
+  padding: 10px;
+}
+
+/* Mobile Service Card section */
+.mobile_service_card{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mobile_service_card .cs__item_box{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cs__item_box .carsosel_btn{
+  background-color: transparent;
+  border: 0;
+}
+.cs__item_box .carsosel_btn .carsosel_btn_icon{
+  color: #2b2b2b;
+}
+.cs__item_box .carsosel_btn:hover .carsosel_btn_icon{
+  color: #27baf1;
+}
+
+/* Market banner section style */
+.mk__container{
+  background-color: #ffffff;
+  margin-top: -150px;
+  padding-top: 180px;
+}
+.ban__header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mb__heading h1{
+  font-size: clamp(1rem, 1.1458rem + 0.4762vw, 1.5625rem);
+}
+.ban__img{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.ban_img_item_1{
+  position: relative;
+  z-index: 1;
+  width: 40%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: -50px;
+}
+.ban_img_item_1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ban_img_item_2{
+  width: 70%;
+  height: 60vh;
+}
+.ban_img_item_2 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* Drag Slider card Section */
+.drag_slider{
+  background-color: #f5f5f5;
+  margin-top: -100px;
+  padding-top: 200px;
+}
+.drag_slider .drag_head{
+  display: flex;
+  align-items: center;
+  margin: 50px 25px;
+}
+.drag_head .main_header{
+  width: 100%;
+}
+.drag_head .main_header h1{
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: clamp(1.25rem, 0.8333rem + 1.9048vw, 2.5rem);
+}
+.ds_MainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ds_MainContainer:hover .ds_btn_box{
+  opacity: 1;
+}
+.ds_btn_box{
+  opacity: 0;
+  width: 100%;
+  padding: 0 25px;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.ds_btn_box .ds_arrow_button{
+  padding: 13px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  border: 0;
+  transition: 0.2s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ds_btn_box .ds_arrow_button:hover{
+  color: black;
+  background-color: white;
+}
+
+.ds_ItemsContainer {
+  width: 100%;
+  padding: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: grab;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.ds_item {
+  width: 480px;
+  display: inline-flex;
+  margin-left: 100px;
+}
+
+.ds_item_box{
+  width: 100%;
+}
+
+.ds_activeClass {
+  cursor: grabbing;
+}
+.drag_para{
+  width: 100%;
+  height: 54px;
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+  user-select: none;
+  margin-bottom: 10px;
+  white-space: wrap;
+}
+.drag_title{
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  user-select: none;
+  margin-bottom: 10px;
+}
+.drag_count{
+  color: #bbbbbb;
+  width: 100%;
+  font-size: 15px;
+  user-select: none;
+  border-bottom: 1px solid #bbbbbb;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.drag_img{
+  width: 100%;
+}
+.drag_img img{
+  width: 100%;
+  height: auto;
+  user-drag: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+}
+
+ .mobile_service_card{
+  position: relative;
+ }
+ .mobile_service_card .ds_btn_box{
+    top: 65%;
+ }
+ .mobile_service_card:hover .ds_btn_box{
+  opacity: 1;
+ }
+
+/* Banner Content section */
+  .banner_content{
+    padding: 100px 0;
+  }
+  .banner_content .bc_img{
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .banner_content .bc_img img{
+    width: 100%;
+    /* height: 400px; */
+    object-fit: cover;
+  }
+  .banner_content .bc_content{
+    max-width: 420px;
+    width: 100%;
+  }
+  .banner_content .bc_content .bc_title{
+    font-size: clamp(.95rem, 0.7333rem + 1.9048vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+  .banner_content .bc_content .bc_para{
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+    user-select: none;
+    margin-bottom: 20px;
+  }
+  .bc_content_contain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bc_content .bc_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  .bc_content .bc_button a{
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 22px;
+  }
+  .bc_content .bc_button a span{
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  @media only screen and (max-width: 1255px) {
+    .ds_item:first-child{
+      margin-left: 0;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+  
+    .animated_card{
+      width: 48%;
+    }
+    .drag_slider .item {
+      width: 370px;
+    }
+    
+    .banner_content .bc_img_contain{
+      padding-bottom: 50px;
+    }
+  }
+  @media only screen and (max-width: 960px) {
+    .bc_content_contain{
+      position: relative;
+    }
+    .bc_content::before{
+      content: '';
+      background-color: #2b2b2b;
+      width: 150px;
+      position: absolute;
+      top: -50px;
+      bottom: -100px;
+      left: 0;
+    }
+
+    .banner_content .bc_img_contain{
+      padding-right: 100px;
+    }
+
+    .banner_content .bc_content{
+      max-width: 500px;
+      margin-left: 130px;
+      padding-right: 100px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .ban__img{
+      flex-direction: column-reverse;
+    }
+    .ban_img_item_2{
+      width: 100%;
+    }
+    .ban_img_item_1 {
+      width: 70%;
+      height: 300px;
+      margin-left: 0;
+      margin-right: auto;
+      margin-top: -50px;
+    }
+    .card__service{
+      margin-top: 0px;
+    }
+    .bc_content::before{
+      width: 100px;
+    }
+    .banner_content .bc_img_contain{
+      padding-right: 50px;
+    }
+    .banner_content .bc_content{
+      max-width: 500px;
+      margin-left: 130px;
+      padding-right: 50px;
+    }
+    .bc_content .bc_button{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    .mobile_service_card {
+      height: 590px;
+    }
+
+    .animated_card{
+      width: 95%;
+    }
+    .animated_card .card_title h1 {
+      height: auto;
+      font-size: 18px;
+    }
+    .animated_card .card_title p {
+      height: auto;
+    }
+    .drag_slider{
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+    .drag_slider .drag_head {
+      justify-content: flex-start;
+      margin: 50px 0px;
+  }
+  .ds_MainContainer:hover .ds_btn_box {
+    opacity: 0;
+  }
+  }
+  @media only screen and (max-width: 600px) {
+    .mobile_service_card {
+      height: 500px;
+    }
+    .animated_card .card_title h1 {
+      font-size: 16px;
+    }
+  }
+  @media only screen and (max-width: 425px) {
+    .banner_content .bc_img img{
+      height: auto;
+    }
+    .bc_content::before{
+      width: 60px; 
+    }
+    .banner_content .bc_content{
+      max-width: 500px;
+      margin-left: 90px;
+      padding-right: 30px;
+    }
+    .mobile_service_card {
+      height: 460px;
+    }
+    .animated_card .card_title h1 {
+      font-size: 13px;
+      padding-right: 0px;
+    }
+  }
+  @media only screen and (max-width: 375px) {
+
+    .mobile_service_card {
+      height: 360px;
+    }
+  }

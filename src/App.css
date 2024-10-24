@@ -1,0 +1,348 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img{
+  vertical-align: bottom;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+ul{
+  list-style: none;
+  padding: 0;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+body{
+  background-color: rgb(226, 226, 226);
+}
+.app_container{
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+.small__header{
+  display: none;
+}
+
+/* Moving Arrow */
+.small__header h1{
+  font-size: 10px;
+  font-weight: 600;
+}
+.move_arrow_contain{
+  display: flex;
+  justify-content: flex-start;
+  transition: 0.1s ease-in;
+}
+.move_arrow_contain:hover .moving_arrow{
+  transform: translateX(50%);
+}
+
+/* Link Style Under Line */
+a.under_line{
+  color: #005586;
+  text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 768px){
+  .small__header{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    transform: rotateZ(-90deg);
+  }
+  .small__header h1{
+    font-size: .8rem;
+    color: #979899;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+  }
+}
+
+/* Splash Screen Animation */
+.splash_container{
+  position: absolute;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+}
+.splash::before{
+  content: '';
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background: linear-gradient(45deg,#F17C58, #FFDC18, #FF3706);
+  background-size: 600% 100%;
+  animation: gradient 5s linear infinite;
+  animation-direction: alternate;
+} 
+@keyframes gradient {
+  0% {background-position: 0%}
+  100% {background-position: 100%}
+}
+.splash {
+  position: relative;
+  z-index: 10000;
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity .6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.splash--exit {
+  opacity: 0;
+}
+
+.splash__image {
+  padding: 15px;
+  opacity: 0;
+  animation-name: fadeIn, pulse;
+  animation-duration: 1s, 1s;
+  animation-delay: 0, 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.splash__image--exit {
+  animation-name: zoomOutUp;
+  animation-duration: .6s;
+  animation-delay: 0;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOutUp {
+  from {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    transform-origin: center bottom;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+
+/* Route animation */
+.page-appear .container,
+.page-enter .container {
+  opacity: 0;
+}
+.page-enter-active .container,
+.page-appear-active .container {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.page-exit .container {
+  opacity: 1;
+}
+.page-exit-active .container {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+/* Swipe test without extra markup */
+.page::after {
+  display: block;
+  content: "";
+  position: fixed;
+  inset: 0 0 0 0;
+  pointer-events: none;
+  background: linear-gradient(45deg,#F17C58, #FFDC18, #FF3706);
+  background-size: 600% 100%;
+  animation: gradientRoute 1s linear infinite;
+  animation-direction: alternate;
+}
+.page-appear::after {
+  display: none;
+}
+.page-exit-active::after {
+  animation: swipeIn 1s ease both;
+}
+.page-enter-active::after {
+  animation: swipeOut 1s ease both;
+}
+.page-enter-done::after {
+  background: none;
+}
+/* Override B to swipe vertical */
+.page-pageB.page-enter-active::after {
+  animation: swipeUp 1s ease both;
+}
+
+/* Loading on page load */
+.page-appear-suspended::after {
+  position: absolute;
+  inset: 0 0 0 0;
+  background: linear-gradient(45deg,#F17C58, #FFDC18, #FF3706);
+  background-size: 600% 100%;
+  animation: gradientRoute 1s linear infinite;
+  animation-direction: alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-appear-suspended::after {
+  content: "Appear suspended...";
+  opacity: 1;
+}
+
+/* Loading during page transition */
+.page-enter-suspended::after {
+  position: absolute;
+  inset: 0 0 0 0;
+  background: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-enter-suspended::after {
+  content: "Enter suspended...";
+  opacity: 1;
+}
+
+@keyframes gradientRoute {
+  0% {background-position: 0%}
+  100% {background-position: 100%}
+}
+
+@keyframes swipeIn {
+  from {
+    transform: translateX(-100%);
+  }
+}
+@keyframes swipeOut {
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes swipeUp {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* Thank you page  */
+.ty_container{
+  width: 100vw;
+  height: 80vh;
+  text-align: center;
+}
+
+.ty_container #thankyou {
+  background-color: white;
+  border-radius: 10px;
+  height: 190px;
+  width: 300px;
+  border: 6px solid #e2552d;
+  box-shadow: 7px 7px 4px #4999b6;
+  margin: 250px auto 50px;
+  text-align: center;
+  -webkit-animation: flash 1.2s ease 0s infinite;
+  animation: flash 1.2s ease 0s infinite;
+}
+
+.ty_container #h2thankyou {
+  color: #4999b6;
+  padding: 32px;
+  font-size: 44px;
+  font-family: 'Open Sans', 'sans-serif';
+  -webkit-animation: flashtwo 1.2s linear 0s infinite;
+  animation: flashtwo 1.2s linear 0s infinite;
+}
+.ty_container a {
+  text-decoration: none;
+  color: #4999b6;
+}
+
+.ty_container #linkback {
+  font-family: 'Open Sans', 'sans-serif';
+  text-decoration: none;
+  padding: 12px;
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 4px;
+  margin: 50px auto;
+  width: 200px;
+}
+
+.ty_container #linkback:hover {
+  background-color: #e2552d;
+}
+
+.ty_container a:hover {
+  color: white;
+}
+
+@keyframes flash {
+  0% {
+    background-color: white;
+  }
+  49% {
+    background-color: white;
+  }
+  50% {
+    background-color: #e2552d;
+  }
+  100% {
+    background-color: #e2552d;
+  }
+}
+
+@keyframes flashtwo {
+  0% {
+    color: #e2552d;
+  }
+  49% {
+    color: #e2552d;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: white;
+  }
+}

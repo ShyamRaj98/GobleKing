@@ -1,0 +1,110 @@
+/* CarouselSection.css */
+.MuiLinearProgress-root.MuiLinearProgress-colorPrimary{
+  width: 100%;
+  padding: 0px!important;
+}
+.MuiMobileStepper-root{
+  padding: 0px!important;
+}
+.MuiLinearProgress-root{
+  height: 1.2px!important;
+  background-color: rgba(0, 0, 0, 0.506)!important;
+}
+.MuiLinearProgress-bar{
+  height: 1.5px!important;
+  background-color: black!important;
+}
+.cb__banner{
+  width: 100%;
+}
+.cb__banner .cb__head{
+  font-size: clamp(1rem, 1.0458rem + 0.4762vw, 1.2543rem);
+  margin-bottom: 12px;
+}
+.cb__content{
+  font-size: 14px;
+  font-weight: 600;
+}
+.cb__banner .cb__content_box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.animated-container {
+  opacity: 0;
+  transform: translateY(20px); /* Initial position below the viewport */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-container.slide-up {
+  opacity: 1;
+  transform: translateY(0); /* Slide up to the original position */
+}
+.cb_slide_caro{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.cb_img_box{
+  height: 100%;
+}
+.cb_blur_box{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  background-color: #ffffff66;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+}
+.cb__heading{
+  font-size: clamp(1rem, 1.1458rem + 0.4762vw, 1.5625rem);
+  font-weight: 600;
+  margin-bottom: 30px; 
+}
+.cb_h_content{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cb_h_content .cb__content{
+  color: #757575;
+  font-size: 16px;
+  font-weight: 700;
+}
+.carsosel_btn{
+  padding: 25px 30px;
+  background-color: white;
+  border: 0;
+  max-width: 100px;
+}
+.carsosel_btn .carsosel_btn_icon{
+   font-size: 30px;
+}
+.card_section{
+    width: 100%;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+.cb_content_box::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 45%;
+   background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  
+  .cb__heading{
+    margin: 30px; 
+  }
+  .cb__banner{
+    padding: 30px;
+  }
+}

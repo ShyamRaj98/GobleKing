@@ -1,0 +1,147 @@
+.copy_right {
+    height: 50px;
+    margin: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cleverso_icon{
+    width: 100px;
+    text-align: end;
+}
+.copy_right .cr_policy {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+.copy_right .cr_link {
+    font-size: 14px;
+}
+
+/* footer_2 */
+
+.footer_container_2 ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer_container_2 ul li {
+    border-bottom: initial;
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 25%; 
+}
+
+.footer_container_2 ul li .footer_menu_item:hover:before {
+    opacity: 1;
+    transform: translate(120%, 120%);
+}
+
+.footer_container_2 ul li .footer_menu_item {
+    align-items: center;
+    background-color: #171a21;
+    color: #fff;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    padding: 6vw 6vw 6vw 4vw;
+    position: relative;
+}
+
+.footer_container_2 ul li .footer_menu_item:before {
+    font-feature-settings: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '➷';
+    display: none;
+    font-family: "icomoon" !important;
+    font-size: 4.3vw;
+    color: white;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: -1.5vw;
+    opacity: .1;
+    position: absolute;
+    right: 6vw;
+    text-align: center;
+    text-transform: none;
+    top: 50%;
+    transform: translate(0);
+    transition: opacity .3s, transform .3s;
+}
+
+.footer_container_2 .footer_menu_2 {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.33333;
+    transition: transform .3s cubic-bezier(.33,1,.68,1);
+}
+.footer_menu_item:hover .footer_menu_2{
+    transform: translateY(-50%);
+}
+
+.footer_menu_item:hover .footer_text {
+    opacity: 1;
+}
+.footer_menu_item:hover .footer_subtitle {
+    opacity: 0;
+}
+.footer_subtitle {
+    font-size: .72rem;
+    font-weight: 400;
+    line-height: 1.33333;
+    margin-bottom: 0.4em;
+    margin-right: -1vw;
+    opacity: 1;
+    transition: opacity .3s;
+}
+.footer_title{
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.33333;
+    white-space: pre-line;
+}
+.footer_text {
+    height: 2.66667em;
+    word-wrap: break-word;
+    margin-bottom: -3.06667em;
+    margin-right: -4vw;
+    margin-top: 0.4em;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+@media only screen and (max-width: 960px) {
+    .footer_container_2 ul li .footer_menu_item {
+        padding: 6vw 2vw 6vw 2vw;
+    }
+    .footer_text {
+        height: 3.66667em;  
+        margin-right: -2vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .footer_container_2 ul {
+        flex-direction: column;
+    }
+    .footer_container_2 ul li{
+        width: 100%;
+    }
+    .footer_container_2 ul li .footer_menu_item {
+        padding: 6vw 15vw 13vw 7vw;
+    }
+    .footer_container_2 ul li .footer_menu_item:before {
+        font-size: 5.3vw;
+        right: 10vw;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .cleverso_icon{
+        width: 50px;
+
+    }
+}
